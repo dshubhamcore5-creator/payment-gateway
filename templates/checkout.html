@@ -1,0 +1,15 @@
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<button id="pay-btn">Pay</button>
+<script>
+var options = {
+    key: "{{ key }}",
+    amount: "{{ amount }}",
+    order_id: "{{ order_id }}",
+};
+var rzp = new Razorpay(options);
+document.getElementById('pay-btn').onclick = function(e){
+    rzp.open();
+    e.preventDefault();
+}
+</script>
